@@ -25,7 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     /**
      * Route for logout
      */
-    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::get('/logout', [AuthController::class, 'logout']);
 
     /**
      * Route for keluarga

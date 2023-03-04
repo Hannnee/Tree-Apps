@@ -6,6 +6,7 @@ use App\Helpers\AlertHelper;
 use App\Services\Auth\AuthService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\AuthRequest;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
@@ -29,5 +30,12 @@ class AuthController extends Controller
         }
         AlertHelper::soft('danger', 'Email atau password salah');
         return back();
+    }
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }
